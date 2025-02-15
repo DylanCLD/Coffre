@@ -1,0 +1,28 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center; /* Centre le texte et les boutons */
+    vertical-align: middle; /* Centre verticalement */
+}
+
+td:last-child {
+    text-align: center;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkred;
+}
