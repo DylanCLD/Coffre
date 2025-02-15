@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let action = document.getElementById("choix").value;
         let quantite = document.getElementById("quantite").value;
 
-        if (!produit || !localisation || !action || quantite <= 0) {
-            alert("Veuillez remplir tous les champs correctement !");
+        // Vérifier si le produit sélectionné est la valeur par défaut
+        if (produit === "-- Choisissez un élément --" || !produit || !localisation || !action || quantite <= 0) {
+            alert("Veuillez choisir un produit valide et remplir tous les champs correctement !");
             return;
         }
 
@@ -69,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     return;
                 }
                 stockData[indexProduit].quantite = nouvelleQuantite;
-    
             } else {
                 stockData[indexProduit].quantite = parseInt(stockData[indexProduit].quantite) + parseInt(quantite);
             }
@@ -108,3 +108,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     afficherStock();
 });
+
+

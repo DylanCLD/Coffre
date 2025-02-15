@@ -11,27 +11,44 @@
 
     <form id="stockForm">
         <label for="selectItems">Sélectionnez un produit :</label>
-        <select id="selectItems">
-            <option value="">-- Choisissez un élément --</option>
-        </select>
-
+        <div class="input-container">
+            <select id="selectItems">
+                <option value="">-- Choisissez un élément --</option>
+            </select>
+            <span class="input-text"></span> <!-- Texte sous le select -->
+        </div>
+    
         <label for="localisation">Localisation :</label>
-        <select id="localisation" name="localisation">
-            <option value="Maison">Maison</option>
-            <option value="Hangar Miror Park">Hangar Miror Park</option>
-        </select>
-
+        <div class="input-container">
+            <select id="localisation" name="localisation">
+                <option value="Maison">Maison</option>
+                <option value="Hangar Miror Park">Hangar Miror Park</option>
+            </select>
+            <span class="input-text">Sélectionnez la localisation</span> <!-- Texte sous le select -->
+        </div>
+    
         <label for="choix">Actions :</label>
-        <select id="choix" name="choix">
-            <option value="Déposer">Déposer</option>
-            <option value="Retirer">Retirer</option>
-        </select>
+        <div class="input-container">
+            <select id="choix" name="choix">
+                <option value="Déposer">Déposer</option>
+                <option value="Retirer">Retirer</option>
+            </select>
+            <span class="input-text">Choisissez une action</span> <!-- Texte sous le select -->
+        </div>
+    
+        <div class="input-container">
+            <input type="number" id="quantite" placeholder="Quantité" required>
+            <span class="input-text">Entrez la quantité</span> <!-- Texte sous le champ input -->
+        </div>
+    
+        <div class="input-container">
+            <input type="submit" value="Valider">
+            <span class="input-text">Validé votre demande</span> <!-- Texte sous le bouton -->
+        </div>
 
 
-        <input type="number" id="quantite" placeholder="Quantité" required>
-
-        <input type="submit" placeholder="Validé">
     </form>
+    
 
     <p id="result"></p> <!-- Zone pour afficher le résultat -->
     <br>
@@ -92,7 +109,32 @@
         </tr>
         <tr>
 
-        
     </table>
+
+    <!-- Tableau pour les armes -->
+<h1>Stock des armes :</h1>
+<table border="1" id="dataTableArmes">
+    <tr>
+        <th>Arme</th>
+        <th>Quantité</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>Arme 1</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Arme 2</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Arme 3</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
 </body>
 </html>
