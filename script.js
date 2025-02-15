@@ -70,9 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 stockData[indexProduit].quantite = nouvelleQuantite;
     
-            }else{
+            } else {
                 stockData[indexProduit].quantite = parseInt(stockData[indexProduit].quantite) + parseInt(quantite);
-
             }
             stockData[indexProduit].action = action;
         } else {
@@ -91,11 +90,20 @@ document.addEventListener("DOMContentLoaded", function () {
         afficherStock();
     });
 
-    // Fonction pour supprimer un élément du tableau et du stockage
+    // Fonction pour supprimer un élément du tableau et du stockage avec mot de passe
     window.supprimerStock = function (index) {
-        stockData.splice(index, 1);
-        localStorage.setItem("stockData", JSON.stringify(stockData));
-        afficherStock();
+        const password = prompt("Entrez le mot de passe pour supprimer l'élément:");
+        
+        // Mot de passe fixe, vous pouvez le modifier ou récupérer dynamiquement
+        const motDePasseCorrect = "admincosaaled"; 
+        
+        if (password === motDePasseCorrect) {
+            stockData.splice(index, 1);
+            localStorage.setItem("stockData", JSON.stringify(stockData));
+            afficherStock();
+        } else {
+            alert("Mot de passe incorrect. Action annulée.");
+        }
     };
 
     afficherStock();
